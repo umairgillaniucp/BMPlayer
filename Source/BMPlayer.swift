@@ -346,7 +346,7 @@ open class BMPlayer: UIView {
         playerLayer?.pause()
         playerLayer?.prepareToDeinit()
         NotificationCenter.default.removeObserver(self, name:
-            Notification.name.didChangeStatusBarOrientationNotification, object: nil)
+            Notification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
     }
     
     
@@ -402,7 +402,7 @@ open class BMPlayer: UIView {
     }
     
     fileprivate func initUIData() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.onOrientationChanged), name: Notification.name.didChangeStatusBarOrientationNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onOrientationChanged), name: Notification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
     }
     
     fileprivate func configureVolume() {
